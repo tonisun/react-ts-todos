@@ -10,17 +10,25 @@ function TodoCard (props) {
         {rowNumber: 3, rowDescription: 'Feed Guppies', rowAssigned: 'Pepi'},
         {rowNumber: 4, rowDescription: 'Go shoping', rowAssigned: 'Günter'},
         {rowNumber: 5, rowDescription: 'Lern Java Spring', rowAssigned: 'Toni'},
-      ] )
+    ])
 
     const addTodo = (description, assigned) => {
+        let rowNumber = 0
+        
         if (arrTodos.length > 0) {
-            const newTodo = {
-                rowNumber: arrTodos.length + 1,
-                rowDescription: description,
-                rowAssigned: assigned
-            }
-            setTodos(arrTodos => [...arrTodos, newTodo])
+            rowNumber = arrTodos[arrTodos.length - 1].rowNumber + 1
+        } else {
+            rowNumber = 1
         }
+
+        const newTodo = {
+            rowNumber: rowNumber,
+            rowDescription: description,
+            rowAssigned: assigned
+        }
+            
+        setTodos(arrTodos => [...arrTodos, newTodo])
+        
     }
 
     return (
