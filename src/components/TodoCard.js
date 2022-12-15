@@ -4,6 +4,8 @@ import NewTodoForm from "./NewTodoForm"
 
 function TodoCard (props) {
 
+    const [showAddTodoForm, setShowAddTodoForm] = useState(false)
+
     const [arrTodos, setTodos] = useState([
         {rowNumber: 1, rowDescription: 'Feed Aya', rowAssigned: 'Toni'},
         {rowNumber: 2, rowDescription: 'Make sport', rowAssigned: 'Toni'},
@@ -28,7 +30,15 @@ function TodoCard (props) {
         }
             
         setTodos(arrTodos => [...arrTodos, newTodo])
-        
+        setShowAddTodoForm(false)
+    }
+
+    const deleteTodo = (todoRowNumber) => {
+        let filtered = arrTodos.filter( function (value) {
+            return value.rowNumber !== todoRowNumber
+        })
+
+        setTodos(filtered)
     }
 
     return (
@@ -37,9 +47,13 @@ function TodoCard (props) {
                 {props.tableTitle}
             </div>
             <div className='card-body'>
-                <TodoTable arrTodos={arrTodos}/>
-                <button className='btn btn-primary' onClick={addTodo}>Add new todo</button>
-                <NewTodoForm addTodo={addTodo}/>
+                <TodoTable arrTodos={arrTodos} deleteTodo={deleteTodo}/>
+
+                <button className='btn btn-primary' onClick={ () => setShowAddTodoForm(!showAddTodoForm)}>
+                    {showAddTodoForm ? 'Close New Todo' : 'New Todo' }</button>
+
+                {showAddTodoForm && <NewTodoForm addTodo={addTodo}/> }
+                
             </div>
       </div>
     )
