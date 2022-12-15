@@ -1,6 +1,26 @@
+import React, {useState} from "react"
 import TodoTable from "./TodoTable"
 
 function TodoCard (props) {
+
+    const [arrTodos, setTodos] = useState([
+        {rowNumber: 1, rowDescription: 'Feed Aya', rowAssigned: 'Toni'},
+        {rowNumber: 2, rowDescription: 'Make sport', rowAssigned: 'Toni'},
+        {rowNumber: 3, rowDescription: 'Feed Guppies', rowAssigned: 'Pepi'},
+        {rowNumber: 4, rowDescription: 'Go shoping', rowAssigned: 'Günter'},
+        {rowNumber: 5, rowDescription: 'Lern Java Spring', rowAssigned: 'Toni'},
+      ] )
+
+    const addTodo = () => {
+        if (arrTodos.length > 0) {
+            const newTodo = {
+                rowNumber: arrTodos.length + 1,
+                rowDescription: 'New Todo',
+                rowAssigned: 'User Three'
+            }
+            setTodos(arrTodos => [...arrTodos, newTodo])
+        }
+    }
 
     return (
         <div className='card shadow'>
@@ -8,7 +28,8 @@ function TodoCard (props) {
                 {props.tableTitle}
             </div>
             <div className='card-body'>
-                <TodoTable arrTodos={props.arrTodos}/>
+                <TodoTable arrTodos={arrTodos}/>
+                <button className='btn btn-primary' onClick={addTodo}>Add new todo</button>
             </div>
       </div>
     )
