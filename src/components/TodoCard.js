@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import TodoTable from "./TodoTable"
+import NewTodoForm from "./NewTodoForm"
 
 function TodoCard (props) {
 
@@ -11,12 +12,12 @@ function TodoCard (props) {
         {rowNumber: 5, rowDescription: 'Lern Java Spring', rowAssigned: 'Toni'},
       ] )
 
-    const addTodo = () => {
+    const addTodo = (description, assigned) => {
         if (arrTodos.length > 0) {
             const newTodo = {
                 rowNumber: arrTodos.length + 1,
-                rowDescription: 'New Todo',
-                rowAssigned: 'User Three'
+                rowDescription: description,
+                rowAssigned: assigned
             }
             setTodos(arrTodos => [...arrTodos, newTodo])
         }
@@ -30,6 +31,7 @@ function TodoCard (props) {
             <div className='card-body'>
                 <TodoTable arrTodos={arrTodos}/>
                 <button className='btn btn-primary' onClick={addTodo}>Add new todo</button>
+                <NewTodoForm addTodo={addTodo}/>
             </div>
       </div>
     )
