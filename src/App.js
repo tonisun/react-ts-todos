@@ -12,7 +12,6 @@ function App() {
     {rowNumber: 3, rowDescription: 'Feed Guppies', rowAssigned: 'Pepi'},
     {rowNumber: 4, rowDescription: 'Go shoping', rowAssigned: 'Günter'},
     {rowNumber: 5, rowDescription: 'Lern Java Spring', rowAssigned: 'Toni'},
-    {rowNumber: 6, rowDescription: 'Wichsen', rowAssigned: 'Toni'},
   ]
 
   return (

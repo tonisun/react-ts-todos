@@ -38,11 +38,6 @@ function TodoTable(props) {
                         rowDescription={props.arrTodos[4].rowDescription} 
                         rowAssigned={props.arrTodos[4].rowAssigned}
                     />
-                    <TodoRowItem 
-                        rowNumber={props.arrTodos[5].rowNumber} 
-                        rowDescription={props.arrTodos[5].rowDescription} 
-                        rowAssigned={props.arrTodos[5].rowAssigned}
-                    />
                 </tbody>
             </table>
         </>

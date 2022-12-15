@@ -3,7 +3,7 @@ import TodoTable from "./TodoTable"
 function TodoCard (props) {
 
     return (
-        <div className='card'>
+        <div className='card shadow'>
             <div className='card-header text-bg-primary p-3'>
                 {props.tableTitle}
             </div>
