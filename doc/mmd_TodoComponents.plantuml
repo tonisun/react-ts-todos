@@ -1,0 +1,19 @@
+@startmindmap
+<style>
+mindmapDiagram {
+  .green {
+    BackgroundColor lightgreen
+  }
+  .rose {
+    BackgroundColor #FFBBCC
+  }
+  .your_style_name {
+    BackgroundColor lightblue
+  }
+}
+</style>
++ App ()\n\nimport TodoCard from './components/TodoCard'\n\nconst tableTitle = 'Todo\'s'\nconst arrTodos = [\n\t{rowNumber: 1, rowDescription: 'Feed Aya', rowAssigned: 'Toni'},\n\t{rowNumber: 2, rowDescription: 'Make sport', rowAssigned: 'Toni'},\n\t{rowNumber: 3, rowDescription: 'Feed Guppies', rowAssigned: 'Pepi'},\n\t{rowNumber: 4, rowDescription: 'Go shoping', rowAssigned: 'Günter'},\n\t{rowNumber: 5, rowDescription: 'Lern Java Spring', rowAssigned: 'Toni'},\n\t{rowNumber: 6, rowDescription: 'Wichsen', rowAssigned: 'Toni'},\n]\n\n<TodoCard\n\ttableTitle={tableTitle}\n\tarrTodos={arrTodos}\n/><<green>>
+++ TodoCard (props)\n\nimport TodoTable from "./TodoTable"\n\n{props.tableTitle}\n\n<TodoTable\n\tarrTodos={props.arrTodos}\n/> <<green>>
++++ TodoTable (props)\n\nimport TodoRowItem from './TodoRowItem'\n\n<TodoRowItem\n\trowNumber={props.arrTodos[0].rowNumber}\n\trowDescription={props.arrTodos[0].rowDescription\n\trowAssigned={props.arrTodos[0].rowAssigned}\n/>\n<TodoRowItem\n\trowNumber={props.arrTodos[1].rowNumber}\n\trowDescription={props.arrTodos[1].rowDescription\n\trowAssigned={props.arrTodos[1].rowAssigned}\n/>\n<TodoRowItem\n\trowNumber={props.arrTodos[2].rowNumber}\n\trowDescription={props.arrTodos[2].rowDescription\n\trowAssigned={props.arrTodos[2].rowAssigned}\n/>\n<TodoRowItem\n\trowNumber={props.arrTodos[3].rowNumber}\n\trowDescription={props.arrTodos[3].rowDescription\n\trowAssigned={props.arrTodos[3].rowAssigned}\n/>\n<TodoRowItem\n\trowNumber={props.arrTodos[4].rowNumber}\n\trowDescription={props.arrTodos[4].rowDescription\n\trowAssigned={props.arrTodos[4].rowAssigned}\n/><<green>>
+++++ TodoRowItem (props)\n\t<>\n\t\t<tr>\n\t\t\t<th scope='row'>{props.rowNumber}</th>\n\t\t\t<td>{props.rowDescription}</td>\n\t\t\t<td>{props.rowAssigned}</td>\n\t\t</tr>\n\t</> <<green>>
+@endmindmap
