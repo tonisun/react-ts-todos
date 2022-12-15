@@ -1,10 +1,6 @@
 
 function TodoRowItem (props) {
 
-    //const rowNumber = [1, 2, 3]
-    //const rowDescription = ['Feed cat', 'Go shoping', 'Feed the Guppies']
-    //const rowAssigned = ['Toni', 'Günter', 'Pepi'] 
-
     return (
         <>
             <tr>
